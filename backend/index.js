@@ -2,12 +2,12 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 import app from './app.js'
-import connectdatabase from "./connectDB/connection.js";
+import connectDB from "./connection/connection.js";
 
 
 const port = (process.env.PORT || 6000)
 
-connectdatabase(process.env.DBURI);
+connectDB(process.env.DBURI);
 
 
 app.listen(port, () => {
