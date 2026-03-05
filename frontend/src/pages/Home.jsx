@@ -1,15 +1,22 @@
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import Services from "../components/Services";
+import About from "../components/About";
+import InstagramGallery from "../components/InstagramGallery";
+import CTA from "../components/CTA";
+import Footer from "../components/Footer";
+
 function Home() {
   return (
-    <div>
+    <div className="bg-[#f6efe6]">
 
-      <h1 className="text-4xl font-bold mb-6">
-        Plan Your Dream Wedding 💍
-      </h1>
-
-      <p>
-        Book venues, decorators, photographers, and manage
-        your wedding planning in one place.
-      </p>
+      <Navbar />
+      <Hero />
+      <Services />
+      <About />
+      <InstagramGallery />
+      <CTA />
+      <Footer />
 
     </div>
   );
