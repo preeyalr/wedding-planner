@@ -1,18 +1,22 @@
+import React from "react";
+
 function Navbar() {
   return (
-    <div className="bg-red-700 text-white h-20 flex items-center justify-between px-6">
-      <h1 className="text-2xl font-bold">ShaadiPlanner</h1>
+    <div className="flex justify-between items-center px-10 py-6">
 
-      <input
-        type="text"
-        placeholder="Search vendors..."
-        className="px-4 py-2 rounded text-black"
-      />
-
-      <div className="flex gap-4">
-        <span>🔔</span>
-        <span>👤</span>
+      <div className="flex gap-8 text-gray-700 text-sm">
+        <a href="#">About</a>
+        <a href="#">Weddings</a>
+        <a href="#">Events</a>
+        <a href="#">Contact</a>
       </div>
+
+      <div className="font-semibold text-lg">◆ Descon</div>
+
+      <button className="border border-red-700 text-red-700 px-4 py-2 rounded-md hover:bg-red-700 hover:text-white transition">
+        Let's talk
+      </button>
+
     </div>
   );
 }
