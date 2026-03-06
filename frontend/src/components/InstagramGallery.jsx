@@ -18,11 +18,12 @@ function InstagramGallery() {
       <div className="text-center mb-12">
 
         <h2 className="font-heading text-4xl md:text-5xl text-[#3b2b2b]">
-          On instagram
+          Wedding Inspiration Gallery
         </h2>
 
         <p className="font-body text-gray-500 text-sm mt-2">
-          Follow me design@prose.com
+          Explore beautiful weddings planned through
+our platform and get inspired for your big day.
         </p>
 
       </div>

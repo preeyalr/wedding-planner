@@ -9,9 +9,10 @@ function Login(){
       <div className="bg-white shadow-lg rounded-lg p-10 w-full max-w-md">
 
         <h2 className="font-heading text-4xl text-center text-[#3b2b2b] mb-6">
-          Login
+          Login to Your Wedding Planner
         </h2>
-
+     <p>Manage your wedding planning dashboard <br />
+and connect with vendors.</p>
         <form className="space-y-4 font-body">
 
           <input

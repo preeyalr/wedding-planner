@@ -15,8 +15,7 @@ function About() {
           </p>
 
           <h2 className="font-heading text-4xl md:text-5xl text-[#3b2b2b] mt-2 leading-tight">
-            Interior design <br />
-            that matters
+            Your Complete Wedding Planning Platform
           </h2>
 
           <div className="flex gap-12 mt-10">
@@ -24,11 +23,15 @@ function About() {
             <div>
 
               <h3 className="font-heading text-3xl text-[#3b2b2b]">
-                1K+
+                We simplify wedding planning by connecting <br />
+couples with trusted vendors and powerful <br />
+planning tools in one place.
               </h3>
 
               <p className="font-body text-sm text-gray-500">
-                Regular customer in <br /> every month
+              500+ Trusted Vendors <br />
+10,000+ Couples Planned Weddings <br />
+25+ Cities Covered
               </p>
 
             </div>

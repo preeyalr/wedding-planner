@@ -1,6 +1,6 @@
 import Sidebar from "../components/Sidebar"
 import VendorCard from "../components/VendorCard"
-
+import BackButton from "../components/BackButton"
 function Vendors(){
 
   const vendors = [
@@ -24,23 +24,41 @@ function Vendors(){
   ]
 
   return(
+    <section className="py-20 px-10 md:px-20 bg-white">
 
+      <div className="text-center mb-14">
+
+        <h2 className="font-heading text-4xl text-[#3b2b2b]">
+          Explore Wedding Vendors
+        </h2>
+
+        <p className="font-body text-gray-500 mt-3 max-w-xl mx-auto">
+          Discover trusted vendors for every wedding need — photographers,
+          decorators, caterers, venues and more.
+        </p>
+
+      </div>
     <div className="flex">
 
       <Sidebar/>
+       
+      <div className="p-10 w-full">
 
-      <div className="p-10 w-full grid md:grid-cols-3 gap-6">
+        <BackButton/>
+        <div className="p-10 w-full grid md:grid-cols-3 gap-6">
 
-        {vendors.map((vendor,index)=>(
+          {vendors.map((vendor,index)=>(
 
-          <VendorCard key={index} vendor={vendor}/>
+            <VendorCard key={index} vendor={vendor}/>
 
-        ))}
+          ))}
+
+        </div>
 
       </div>
 
     </div>
-
+</section>
   )
 
 }

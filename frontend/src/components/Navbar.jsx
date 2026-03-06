@@ -14,11 +14,11 @@ function Navbar(){
       </button>
       <div className="flex gap-8 text-gray-700 text-sm">
          
-        <a href="#">About</a>
-        <a href="#">Weddings</a>
-        <a href="#">Events</a>
+        <a href="#">Home</a>
+        <a href="#">Vendors</a>
+        <a href="#">Packages</a>
         <a href="#">Contact</a>
-
+        <a href="#">Login</a>
       </div>
 
       <div className="font-heading text-xl">

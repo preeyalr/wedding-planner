@@ -7,25 +7,22 @@ function Hero(){
       <div>
 
         <h1 className="font-heading text-5xl md:text-6xl text-[#3b2b2b] leading-tight">
-
-          Hi There <br/>
-          This is <br/>
-          — Sanches <br/>
-          Liza
+          Plan Your Dream Wedding <br />
+          All In One Place
 
         </h1>
 
         <p className="font-body mt-6 text-gray-600 max-w-md">
 
-          Floral Designer, Wedding Planner, and Event Enthusiast who
-          creates memorable moments for special occasions.
-
+         Connect with trusted vendors, manage your guest list,
+track your wedding budget, and plan every moment
+of your special day with ease.
         </p>
 
         <button className="mt-6 bg-red-700 text-white px-6 py-3 rounded-md">
 
-          Get in touch
-
+          Start Planning
+Explore Vendors
         </button>
 
       </div>
