@@ -1,7 +1,7 @@
-import React from "react";
-
 function About() {
+
   return (
+
     <section className="bg-[#f6efe6] py-20 px-6 md:px-20">
 
       <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -10,28 +10,39 @@ function About() {
 
         <div>
 
-          <p className="text-xs uppercase tracking-widest text-[#c79a63]">
+          <p className="font-body text-xs uppercase tracking-widest text-[#c79a63]">
             About us
           </p>
 
-          <h2 className="text-4xl font-serif text-[#3b2b2b] mt-2">
-            Interior design <br /> that matters
+          <h2 className="font-heading text-4xl md:text-5xl text-[#3b2b2b] mt-2 leading-tight">
+            Interior design <br />
+            that matters
           </h2>
 
           <div className="flex gap-12 mt-10">
 
             <div>
-              <h3 className="text-2xl font-semibold">1K+</h3>
-              <p className="text-sm text-gray-500">
+
+              <h3 className="font-heading text-3xl text-[#3b2b2b]">
+                1K+
+              </h3>
+
+              <p className="font-body text-sm text-gray-500">
                 Regular customer in <br /> every month
               </p>
+
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold">5+</h3>
-              <p className="text-sm text-gray-500">
+
+              <h3 className="font-heading text-3xl text-[#3b2b2b]">
+                5+
+              </h3>
+
+              <p className="font-body text-sm text-gray-500">
                 Years of <br /> experience
               </p>
+
             </div>
 
           </div>
@@ -58,7 +69,9 @@ function About() {
       </div>
 
     </section>
-  );
+
+  )
+
 }
 
-export default About;
+export default About

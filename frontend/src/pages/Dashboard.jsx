@@ -1,31 +1,44 @@
+import Sidebar from "../components/Sidebar"
+
 function Dashboard() {
 
   return (
-    <div>
 
-      <h1 className="text-3xl mb-6">Wedding Dashboard</h1>
+    <div className="flex">
 
-      <div className="grid grid-cols-3 gap-6">
+      <Sidebar />
 
-        <div className="bg-red-100 p-6 rounded">
-          Total Budget
-          <h2 className="text-xl">₹4,00,000</h2>
-        </div>
+      <div className="p-10 w-full">
 
-        <div className="bg-yellow-100 p-6 rounded">
-          Guests
-          <h2 className="text-xl">150</h2>
-        </div>
+        <h1 className="font-heading text-4xl mb-6">
+          Wedding Dashboard
+        </h1>
 
-        <div className="bg-green-100 p-6 rounded">
-          Vendors Booked
-          <h2 className="text-xl">6</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+
+          <div className="bg-white p-6 shadow rounded">
+            Guests
+            <h2 className="text-2xl">120</h2>
+          </div>
+
+          <div className="bg-white p-6 shadow rounded">
+            Vendors
+            <h2 className="text-2xl">6</h2>
+          </div>
+
+          <div className="bg-white p-6 shadow rounded">
+            Budget
+            <h2 className="text-2xl">₹4,50,000</h2>
+          </div>
+
         </div>
 
       </div>
 
     </div>
-  );
+
+  )
+
 }
 
-export default Dashboard;
+export default Dashboard

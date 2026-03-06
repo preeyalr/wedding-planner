@@ -1,13 +1,24 @@
-import GuestTable from "../components/GuestTable";
+import Sidebar from "../components/Sidebar"
+import GuestTable from "../components/GuestTable"
 
-function Guests() {
-  return (
-    <div>
-      <h1 className="text-3xl mb-6">Guest Manager</h1>
+function Guests(){
 
-      <GuestTable />
+  return(
+
+    <div className="flex">
+
+      <Sidebar/>
+
+      <div className="p-10 w-full">
+
+        <GuestTable/>
+
+      </div>
+
     </div>
-  );
+
+  )
+
 }
 
-export default Guests;
+export default Guests

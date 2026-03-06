@@ -1,35 +1,57 @@
 function GuestTable() {
 
   const guests = [
-    { name: "Rahul", phone: "99999999", rsvp: "Yes" },
-    { name: "Priya", phone: "88888888", rsvp: "No" }
-  ];
+
+    { name: "Rahul Sharma", phone: "9999999999", rsvp: "Yes" },
+    { name: "Priya Verma", phone: "8888888888", rsvp: "No" },
+    { name: "Amit Patel", phone: "7777777777", rsvp: "Pending" }
+
+  ]
 
   return (
-    <table className="w-full border">
 
-      <thead>
-        <tr className="bg-gray-200">
-          <th>Name</th>
-          <th>Phone</th>
-          <th>RSVP</th>
-        </tr>
-      </thead>
+    <div className="bg-white shadow rounded p-6">
 
-      <tbody>
+      <h2 className="font-heading text-2xl mb-4">
+        Guest List
+      </h2>
 
-        {guests.map((g, i) => (
-          <tr key={i}>
-            <td>{g.name}</td>
-            <td>{g.phone}</td>
-            <td>{g.rsvp}</td>
+      <table className="w-full font-body">
+
+        <thead>
+
+          <tr className="border-b">
+
+            <th className="text-left py-2">Name</th>
+            <th className="text-left py-2">Phone</th>
+            <th className="text-left py-2">RSVP</th>
+
           </tr>
-        ))}
 
-      </tbody>
+        </thead>
 
-    </table>
-  );
+        <tbody>
+
+          {guests.map((guest, index) => (
+
+            <tr key={index} className="border-b">
+
+              <td className="py-2">{guest.name}</td>
+              <td>{guest.phone}</td>
+              <td>{guest.rsvp}</td>
+
+            </tr>
+
+          ))}
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  )
+
 }
 
-export default GuestTable;
+export default GuestTable

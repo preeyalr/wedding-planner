@@ -1,21 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 function Sidebar() {
+
   return (
-    <div className="w-60 bg-gray-100 h-screen p-5">
-      <ul className="space-y-4">
 
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/dashboard">Dashboard</Link></li>
-        <li><Link to="/vendors">Vendors</Link></li>
-        <li><Link to="/bookings">Bookings</Link></li>
-        <li><Link to="/guests">Guests</Link></li>
-        <li><Link to="/budget">Budget</Link></li>
-        <li><Link to="/website">Wedding Website</Link></li>
+    <div className="w-64 min-h-screen bg-white shadow-md p-6 font-body">
 
-      </ul>
+      <h2 className="font-heading text-2xl mb-8">
+        Wedding Planner
+      </h2>
+
+      <nav className="flex flex-col gap-4">
+
+        <Link to="/dashboard">Dashboard</Link>
+
+        <Link to="/vendors">Vendors</Link>
+
+        <Link to="/guests">Guests</Link>
+
+        <Link to="/budget">Budget</Link>
+
+        <Link to="/login">Logout</Link>
+
+      </nav>
+
     </div>
-  );
+
+  )
+
 }
 
-export default Sidebar;
+export default Sidebar

@@ -1,15 +1,24 @@
-import BudgetChart from "../components/BudgetChart";
+import Sidebar from "../components/Sidebar"
+import BudgetChart from "../components/BudgetChart"
 
-function Budget() {
-  return (
-    <div>
+function Budget(){
 
-      <h1 className="text-3xl mb-6">Wedding Budget</h1>
+  return(
 
-      <BudgetChart />
+    <div className="flex">
+
+      <Sidebar/>
+
+      <div className="p-10 w-full">
+
+        <BudgetChart/>
+
+      </div>
 
     </div>
-  );
+
+  )
+
 }
 
-export default Budget;
+export default Budget

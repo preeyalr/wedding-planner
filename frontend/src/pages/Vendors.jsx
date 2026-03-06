@@ -1,22 +1,48 @@
-import VendorCard from "../components/VendorCard";
-import { vendors } from "../data/vendors";
+import Sidebar from "../components/Sidebar"
+import VendorCard from "../components/VendorCard"
 
-function Vendors() {
-  return (
-    <div>
+function Vendors(){
 
-      <h1 className="text-3xl mb-6">Wedding Vendors</h1>
+  const vendors = [
 
-      <div className="grid grid-cols-3 gap-6">
+    {
+      name: "Royal Decorators",
+      category: "Decoration",
+      rating: 4.8,
+      location: "Indore",
+      image: "https://images.unsplash.com/photo-1519741497674-611481863552"
+    },
 
-        {vendors.map((vendor) => (
-          <VendorCard key={vendor.id} vendor={vendor} />
+    {
+      name: "Dream Photography",
+      category: "Photography",
+      rating: 4.7,
+      location: "Bhopal",
+      image: "https://images.unsplash.com/photo-1520854221256-17451cc331bf"
+    }
+
+  ]
+
+  return(
+
+    <div className="flex">
+
+      <Sidebar/>
+
+      <div className="p-10 w-full grid md:grid-cols-3 gap-6">
+
+        {vendors.map((vendor,index)=>(
+
+          <VendorCard key={index} vendor={vendor}/>
+
         ))}
 
       </div>
 
     </div>
-  );
+
+  )
+
 }
 
-export default Vendors;
+export default Vendors
