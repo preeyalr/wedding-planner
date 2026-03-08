@@ -7,7 +7,7 @@ import Dashboard from "./pages/Dashboard"
 import Vendors from "./pages/Vendors"
 import Guests from "./pages/Guests"
 import Budget from "./pages/Budget"
-
+import Profile from "./pages/Profile"
 function App() {
 
   return (
@@ -30,6 +30,8 @@ function App() {
 
         <Route path="/budget" element={<Budget />} />
 
+
+<Route path="/profile" element={<Profile />} />
       </Routes>
 
     </BrowserRouter>
