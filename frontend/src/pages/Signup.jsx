@@ -1,6 +1,39 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
+import axios from "axios"
 
 function Signup(){
+
+  const [name,setName] = useState("")
+  const [email,setEmail] = useState("")
+  const [password,setPassword] = useState("")
+
+  const handleSubmit = async (e)=>{
+    e.preventDefault()
+
+    try{
+
+      const response = await axios.post(
+        "http://localhost:8000/api/users/signup",
+        {
+          name:name,
+          email:email,
+          password:password
+        }
+      )
+
+      console.log(response.data)
+
+      alert("Signup successful!")
+
+    }catch(error){
+
+      console.log(error.response?.data || error.message)
+
+      alert("Signup failed")
+
+    }
+  }
 
   return(
 
@@ -12,27 +45,34 @@ function Signup(){
           Create Account
         </h2>
 
-        <form className="space-y-4 font-body">
+        <form onSubmit={handleSubmit} className="space-y-4 font-body">
 
           <input
             type="text"
             placeholder="Full Name"
+            value={name}
+            onChange={(e)=>setName(e.target.value)}
             className="w-full border p-3 rounded"
           />
 
           <input
             type="email"
             placeholder="Email address"
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
             className="w-full border p-3 rounded"
           />
 
           <input
             type="password"
             placeholder="Password"
+            value={password}
+            onChange={(e)=>setPassword(e.target.value)}
             className="w-full border p-3 rounded"
           />
 
           <button
+            type="submit"
             className="w-full bg-red-700 text-white py-3 rounded hover:bg-red-800"
           >
             Sign Up
@@ -44,10 +84,7 @@ function Signup(){
 
           Already have an account?
 
-          <Link
-            to="/login"
-            className="text-red-700 ml-1"
-          >
+          <Link to="/login" className="text-red-700 ml-1">
             Login
           </Link>
 
@@ -58,7 +95,6 @@ function Signup(){
     </div>
 
   )
-
 }
 
 export default Signup
