@@ -1,11 +1,21 @@
 import express from "express";
 import userrouter from "./routes/UserRoute.js";
+import cors from "cors";
 const app = express();
 
 
-
+//parsing methods
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+
+//cors allowation
+app.use(cors({
+    origin:"http://localhost:5173",
+    credentials:true,
+}));
+
+//routingg
 app.use("/api/users",userrouter);
 
 app.get('/', (req, res) => {
