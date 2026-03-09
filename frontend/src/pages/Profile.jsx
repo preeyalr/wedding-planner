@@ -1,11 +1,36 @@
 import { useNavigate } from "react-router-dom"
 import { FaHome, FaArrowLeft, FaUserEdit } from "react-icons/fa"
+import { useState,useEffect } from "react"
+import axios from "axios"
 
 function Profile(){
 
   const navigate = useNavigate()
 
-  const user = JSON.parse(localStorage.getItem("user"))
+  const [user,setUser] = useState(null);
+   useEffect(()=>{
+
+    const fetchProfile = async () => {
+
+      try{
+
+        const res = await axios.get(
+          "http://localhost:8000/api/users/profile",
+          { withCredentials:true }   // ⭐ important for cookies
+        )
+
+        setUser(res.data.user)
+
+      }catch(error){
+        console.log(error)
+        navigate("/login") // redirect if not logged in
+      }
+
+    }
+
+    fetchProfile()
+
+  },[])
 
   return(
 

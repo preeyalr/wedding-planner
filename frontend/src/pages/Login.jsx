@@ -19,24 +19,26 @@ function Login(){
         {
           email: email,
           password: password
+        },
+        {
+           withCredentials: true   // ⭐ important for cookies
         }
       )
 
       console.log(response.data)
 
-      alert("Login successful!")
+      if(response.data.success){
+        alert("Login successful!")
 
-      // optional: store user/token
-      localStorage.setItem("user", JSON.stringify(response.data))
-
-      // redirect to profile page
-      navigate("/profile")
+        // cookie already stored automatically
+        navigate("/profile")
+      }
 
     }catch(error){
 
       console.log(error.response?.data || error.message)
 
-      alert("Login failed")
+      alert(error.response?.data?.message ||"Login failed")
 
     }
   }
