@@ -1,44 +1,26 @@
 import { useNavigate } from "react-router-dom"
 import { FaHome, FaArrowLeft, FaUserEdit } from "react-icons/fa"
-import { useState,useEffect } from "react"
-import axios from "axios"
+import { useContext } from "react"
+import { UserContext } from "../contexts/ContextUser"
 
 function Profile(){
 
   const navigate = useNavigate()
+  const { user } = useContext(UserContext)
 
-  const [user,setUser] = useState(null);
-   useEffect(()=>{
-
-    const fetchProfile = async () => {
-
-      try{
-
-        const res = await axios.get(
-          "http://localhost:8000/api/users/profile",
-          { withCredentials:true }   // ⭐ important for cookies
-        )
-
-        setUser(res.data.user)
-
-      }catch(error){
-        console.log(error)
-        navigate("/login") // redirect if not logged in
-      }
-
-    }
-
-    fetchProfile()
-
-  },[])
+  if(!user){
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p>Loading profile...</p>
+      </div>
+    )
+  }
 
   return(
 
     <div className="min-h-screen bg-[#f6efe6] flex justify-center items-center px-6">
 
       <div className="bg-white shadow-xl rounded-xl p-10 w-full max-w-md">
-
-        {/* Top Buttons */}
 
         <div className="flex justify-between mb-6">
 
@@ -59,45 +41,33 @@ function Profile(){
 
         </div>
 
-        {/* Profile Title */}
-
-        <h1 className="font-heading text-3xl text-center mb-6">
+        <h1 className="text-3xl text-center mb-6 font-bold">
           Your Profile
         </h1>
 
-        {/* Avatar */}
-
         <div className="flex justify-center mb-6">
-
           <div className="w-24 h-24 rounded-full bg-red-100 flex items-center justify-center text-3xl text-red-700">
             👤
           </div>
-
         </div>
 
-        {/* User Info */}
-
-        <div className="space-y-3 text-center font-body">
+        <div className="space-y-3 text-center">
 
           <p className="text-lg font-semibold">
-            {user?.name}
+            {user.name}
           </p>
 
           <p className="text-gray-500">
-            {user?.email}
+            {user.email}
           </p>
 
         </div>
-
-        {/* Buttons */}
 
         <div className="mt-8 flex flex-col gap-3">
 
           <button className="flex items-center justify-center gap-2 bg-red-700 text-white py-3 rounded hover:bg-red-800">
-
             <FaUserEdit/>
             Edit Profile
-
           </button>
 
           <button
