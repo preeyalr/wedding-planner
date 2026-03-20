@@ -1,6 +1,6 @@
 import express from "express";
 import { Router } from "express";
-import { registerUser, loginUser,getProfile, updateProfile } from "../controllers/userController.js";
+import { registerUser, loginUser,getProfile,logoutUser, updateProfile } from "../controllers/userController.js";
 import { isAuthenticated } from "../middleware/AuthMiddleware.js";
 
 const router = express.Router();
@@ -9,6 +9,7 @@ const router = express.Router();
 router.route("/signup").post(registerUser);
 router.route("/login").post(loginUser);
 router.route("/profile").get(isAuthenticated,getProfile).put(isAuthenticated,updateProfile);
+router.route("/logout").post(isAuthenticated,logoutUser);
 
 //vender routes
 //router.route("/vender").post()

@@ -1,17 +1,14 @@
-import { Link } from "react-router-dom"
-
+import { Link } from "react-router-dom";
+import { useLogout } from "../pages/Logout";
 function Sidebar() {
 
+  const handlelogout = useLogout();
+
   return (
-
     <div className="w-64 min-h-screen bg-white shadow-md p-6 font-body">
-
-      <h2 className="font-heading text-2xl mb-8">
-        Wedding Planner
-      </h2>
+      <h2 className="font-heading text-2xl mb-8">Wedding Planner</h2>
 
       <nav className="flex flex-col gap-4">
-
         <Link to="/dashboard">Dashboard</Link>
 
         <Link to="/vendors">Vendors</Link>
@@ -20,14 +17,15 @@ function Sidebar() {
 
         <Link to="/budget">Budget</Link>
 
-        <Link to="/login">Logout</Link>
-
+        <button
+          className="text-left text-red-600 hover:text-red-800"
+          onClick={handlelogout}
+        >
+          Logout
+        </button>
       </nav>
-
     </div>
-
-  )
-
+  );
 }
 
-export default Sidebar
+export default Sidebar;

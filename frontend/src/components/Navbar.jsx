@@ -1,13 +1,17 @@
+import { useContext } from "react"
 import { useState } from "react"
+import { UserContext } from "../contexts/ContextUser"
 import { Link, useNavigate } from "react-router-dom"
 import Sidebar from "./Sidebar"
+
 
 function Navbar(){
 
   const [openSidebar, setOpenSidebar] = useState(false)
 
   // simulate login state
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const {user}  = useContext(UserContext);
+  const isLoggedIn = !!user;
 
   const navigate = useNavigate()
 

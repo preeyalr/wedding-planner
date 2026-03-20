@@ -52,6 +52,18 @@ export const loginUser = async (req, res) => {
  });
 };
 
+export const logoutUser = async (req,res)=>{
+    res.clearCookie("token",{
+      httpOnly: true,
+      secure: true, // true in production
+      sameSite: "strict",
+    });
+    res.status(200).json({
+        success: true,
+        message: "Logged out successfully",
+    });
+};
+
 export const updateProfile = async (req,res) => {
     const {email} = req.user;
     if(!email) {
