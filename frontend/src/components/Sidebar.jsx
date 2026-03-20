@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { useLogout } from "../pages/Logout";
+import { useContext } from "react";
+import { UserContext } from "../contexts/ContextUser";
 function Sidebar() {
-
+  const { user } = useContext(UserContext);
+  const isLoggedIn = !!user;
   const handlelogout = useLogout();
 
   return (
@@ -17,12 +20,18 @@ function Sidebar() {
 
         <Link to="/budget">Budget</Link>
 
-        <button
-          className="text-left text-red-600 hover:text-red-800"
-          onClick={handlelogout}
-        >
-          Logout
-        </button>
+        {!isLoggedIn ? (
+          <>
+            <Link to="/login" className="text-left text-red-600 hover:text-red-800"> Login</Link>
+          </>
+        ) : (
+          <button
+            className="text-left text-red-600 hover:text-red-800"
+            onClick={handlelogout}
+          >
+            Logout
+          </button>
+        )}
       </nav>
     </div>
   );
