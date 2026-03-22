@@ -6,8 +6,8 @@ const vendorSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    category: {
-        type: String,
+    services: {
+        type: [String],
         enum: ["photographer", "decorator", "caterer", "pandit"],
         required: true,
     },
@@ -29,7 +29,7 @@ const vendorSchema = new mongoose.Schema({
         type: Number,
         min: 0,
         max: 5,
-        required: false,
+        default:0,
     },
 
     // media and contact
@@ -47,10 +47,10 @@ const vendorSchema = new mongoose.Schema({
     },
 
     // availability
-    availabilityDates: [{
-        type: Date,
-        required: false,
-    }],
+    // availabilityDates: [{
+    //     type: Date,
+    //     required: false,
+    // }],
 }, { timestamps: true });
 
 const Vendor = mongoose.model("Vendor", vendorSchema);
